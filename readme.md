@@ -92,6 +92,26 @@ For help in the execution of commands we can use
 - To create links we can use the command *ln* and point the inode to be referenced followed by its names (references).
 - The flag _-s_ following ln command will create soft links.
 Tip: if you want to create a symbolic link, refer it to a file using its absolute path, to prevent that if the file is moved the link do not break.
+
+### Finding Files with _find_
+
+The _find_ command searches for files that has components similar with what is being searched, and were specified by the user
+- "-name" argument receives a name to be searched in filename's.
+  - 'find \ -name "hosts"' searches for files with the name "hosts", starting in the root directory. Could be a name that contains the word "hosts" in it
+- "-user" argument search files belonging to user specified
+  - 'find \ -user amy'
+- "-exec" argument will specify an action to be executed with the files found. We can use multiple execs in a find command since we separate them by a '\;'.
+
+For further options take a look at man page for _find_ command or type 'find --help' on your terminal.
+
+### Archiving files with tar
+TAR files basic use is to compress, extract or list files
+- tar -cvf my_archive.tar /home (compress your home directory into the tar file specified)
+- tar -xvf my_archive.tar (extracts my_archive.tar to the current directory. We can use -C to redirect the output to other directory)
+- tar -tvf (show the contents of an archive)
+- the size of the compressed files will vary accordingly to the compression engine choosed.
+
+
 ## Appendice
 ### Mount types
 
